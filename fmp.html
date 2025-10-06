@@ -144,95 +144,111 @@ de certificación de Cambridge.</p></h3>
 </head>
 <body>
 
-<table>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6fa;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+  }
+
+  .table-container {
+    width: 100%;
+    max-width: 950px;
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+  }
+
+  caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 18px;
+    color: #002060;
+    padding: 16px;
+    text-align: left;
+  }
+
+  thead {
+    background-color: #002060;
+    color: white;
+  }
+
+  th, td {
+    padding: 12px 16px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  th {
+    font-size: 15px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f0f3f8;
+  }
+
+  tbody tr:hover {
+    background-color: #dbe5f1;
+    transition: background-color 0.3s ease;
+  }
+
+  td:first-child {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  /* --- Adaptación a pantallas pequeñas --- */
+  @media (max-width: 600px) {
+    caption {
+      text-align: center;
+    }
+
+    th, td {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    table {
+      min-width: 600px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="table-container">
+  <table>
+    <caption>Precios y Pagos de Exámenes</caption>
     <thead>
-        <tr>
-            <th>EXAMEN</th>
-            <th>PRECIO DE CONTADO</th>
-            <th>Pago1-- Del 15 al 31 de octubre.</th>
-            <th>Pago2-- 15 al 30 de noviembre.</th>
-            <th>Pago3-- 1 al 13 de diciembre.</th>
-        </tr>
+      <tr>
+        <th>EXAMEN</th>
+        <th>PRECIO DE CONTADO</th>
+        <th>Pago1 — Del 15 al 31 de octubre</th>
+        <th>Pago2 — 15 al 30 de noviembre</th>
+        <th>Pago3 — 1 al 13 de diciembre</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>starters</td>
-            <td class="currency">$</td>
-            <td class="amount">2,950.00</td>
-            <td class="currency">$</td>
-            <td class="amount">983</td>
-            <td class="currency">$</td>
-            <td class="amount">983</td>
-            <td class="currency">$</td>
-            <td class="amount">983</td>
-        </tr>
-        <tr>
-            <td>movers</td>
-            <td class="currency">$</td>
-            <td class="amount">3,190.00</td>
-            <td class="currency">$</td>
-            <td class="amount">1,063</td>
-            <td class="currency">$</td>
-            <td class="amount">1,063</td>
-            <td class="currency">$</td>
-            <td class="amount">1,063</td>
-        </tr>
-        <tr>
-            <td>flyers</td>
-            <td class="currency">$</td>
-            <td class="amount">3,320.00</td>
-            <td class="currency">$</td>
-            <td class="amount">1,107</td>
-            <td class="currency">$</td>
-            <td class="amount">1,107</td>
-            <td class="currency">$</td>
-            <td class="amount">1,107</td>
-        </tr>
-        <tr>
-            <td>key</td>
-            <td class="currency">$</td>
-            <td class="amount">3,999.00</td>
-            <td class="currency">$</td>
-            <td class="amount">1,333</td>
-            <td class="currency">$</td>
-            <td class="amount">1,333</td>
-            <td class="currency">$</td>
-            <td class="amount">1,333</td>
-        </tr>
-        <tr>
-            <td>pet</td>
-            <td class="currency">$</td>
-            <td class="amount">4,190.00</td>
-            <td class="currency">$</td>
-            <td class="amount">1,397</td>
-            <td class="currency">$</td>
-            <td class="amount">1,397</td>
-            <td class="currency">$</td>
-            <td class="amount">1,397</td>
-        </tr>
-        <tr>
-            <td>fce</td>
-            <td class="currency">$</td>
-            <td class="amount">7,280.00</td>
-            <td class="currency">$</td>
-            <td class="amount">2,427</td>
-            <td class="currency">$</td>
-            <td class="amount">2,427</td>
-            <td class="currency">$</td>
-            <td class="amount">2,427</td>
-        </tr>
-        <tr>
-            <td>CAE</td>
-            <td class="currency">$</td>
-            <td class="amount">7,390.00</td>
-            <td class="currency">$</td>
-            <td class="amount">2,463</td>
-            <td class="currency">$</td>
-            <td class="amount">2,463</td>
-            <td class="currency">$</td>
-            <td class="currency">$</td>
-            <td class="amount">2,463</td>
-        </tr>
+      <tr><td>starters</td><td>$ 2,036.00</td><td>$ 679</td><td>$ 679</td><td>$ 679</td></tr>
+      <tr><td>movers</td><td>$ 2,582.00</td><td>$ 861</td><td>$ 861</td><td>$ 861</td></tr>
+      <tr><td>flyers</td><td>$ 2,822.00</td><td>$ 941</td><td>$ 941</td><td>$ 941</td></tr>
+      <tr><td>key</td><td>$ 3,494.00</td><td>$ 1,165</td><td>$ 1,165</td><td>$ 1,165</td></tr>
+      <tr><td>pet</td><td>$ 3,651.00</td><td>$ 1,217</td><td>$ 1,217</td><td>$ 1,217</td></tr>
+      <tr><td>fce</td><td>$ 5,967.00</td><td>$ 1,989</td><td>$ 1,989</td><td>$ 1,989</td></tr>
+      <tr><td>CAE</td><td>$ 6,999.00</td><td>$ 2,333</td><td>$ 2,333</td><td>$ 2,333</td></tr>
     </tbody>
-</table>
+  </table>
+</div>
+
+    </tbody>
+
 </body>
