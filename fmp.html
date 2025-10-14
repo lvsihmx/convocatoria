@@ -1,190 +1,331 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificación de Inglés</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificación de Inglés - Instituto Fundación Mier y Pesado</title>
 
-<!-- CSS externo -->
-<link rel="stylesheet" href="https://lvsihmx.github.io/certificadoih/img/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://lvsihmx.github.io/certificadoih/img/main.css">
 
-<style>
-  body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-  }
+    <style>
+        /* Variables y Reset Básico */
+        :root {
+            --primary-color: #002060; /* Azul Oscuro (Mier y Pesado) */
+            --secondary-color: #003366; /* Tono más oscuro para hover */
+            --text-color: #333333;
+            --light-bg: #f7f9fc; /* Fondo ligeramente azulado/gris */
+            --white: white;
+            --border-color: #dddddd;
+            --header-bg: #002060;
+        }
 
-  h1, h2, h3 {
-    text-align: center;
-    color: #002060;
-  }
+        body {
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text-color);
+        }
 
-  p {
-    text-align: justify;
-    max-width: 900px;
-    margin: 10px auto;
-  }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+        }
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
+        /* Títulos */
+        h1, h2, h3 {
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.2;
+            color: var(--primary-color);
+        }
 
-  img {
-    display: block;
-    margin: 20px auto;
-  }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            padding-bottom: 5px;
+        }
 
-  a.btn {
-    display: inline-block;
-    background-color: #00723f;
-    color: white;
-    padding: 10px 18px;
-    margin: 8px 0;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            color: var(--secondary-color);
+        }
 
-  a.btn:hover {
-    background-color: #005f33;
-  }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 25px;
+        }
 
-  /* Tabla moderna */
-  table {
-    border-collapse: collapse;
-    width: 90%;
-    max-width: 900px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 40px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 15px auto;
+            max-width: 950px; /* Ancho ajustado para el contenedor */
+            padding: 0 15px;
+        }
 
-  caption {
-    caption-side: top;
-    font-weight: bold;
-    font-size: 18px;
-    color: #002060;
-    padding: 10px;
-  }
+        /* Imagen Logo */
+        img {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
 
-  thead {
-    background-color: #002060;
-    color: white;
-  }
+        /* Botones */
+        a.btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 10px 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            font-size: 1rem;
+        }
 
-  th, td {
-    padding: 12px 16px;
-    text-align: center;
-  }
+        a.btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Contenedores de Pasos (Grid Layout) */
+        .grid-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 950px;
+        }
 
-  th {
-    font-size: 15px;
-  }
+        .grid-steps > div {
+            flex: 1 1 350px;
+            min-width: 280px;
+            max-width: 450px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
 
-  tbody tr:nth-child(even) {
-    background-color: #f0f3f8;
-  }
+        .grid-steps strong {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
 
-  tbody tr:hover {
-    background-color: #dbe5f1;
-    transition: background-color 0.3s ease;
-  }
+        /* Tabla de Precios */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 30px auto;
+            padding: 0 15px;
+            max-width: 100%;
+        }
 
-  td:first-child {
-    font-weight: 600;
-    text-transform: capitalize;
-  }
-</style>
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            min-width: 650px; /* Evita que la tabla se colapse demasiado */
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden; /* Necesario para que el border-radius de la tabla funcione con border-collapse: separate */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        caption {
+            caption-side: top;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            padding: 15px;
+            background-color: #eef2f6;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        thead {
+            background-color: var(--header-bg);
+            color: var(--white);
+        }
+        
+        th {
+            font-weight: 600;
+            border-color: var(--header-bg);
+        }
+        
+        td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #f7f9fc;
+        }
+
+        td:nth-child(n+2) {
+            text-align: right;
+            font-family: monospace; /* Fuente monoespaciada para mejor alineación de números */
+        }
+        
+        /* Rayas de cebra mejoradas */
+        tbody tr:nth-child(even) {
+            background-color: #f0f3f8;
+        }
+
+        tbody tr:hover {
+            background-color: #dbe5f1;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Media Queries para Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 10px;
+                box-shadow: none;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            
+            .grid-steps {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .grid-steps > div {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 15px;
+            }
+            
+            p { padding: 0 5px; }
+            
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container">
-  <img src="https://lvsihmx.github.io/certificadoih/img/LOGOIHB.jpg" width="455" height="156" alt="Logo Instituto"/>
+    <img src="https://lvsihmx.github.io/certificadoih/img/LOGOIHB.jpg" alt="Logo Instituto Fundación Mier y Pesado"/>
 
-  <h1>CERTIFICACIÓN DE INGLÉS</h1>
-  <h1>Convocatoria 2026</h1>
-  <h2>INSTITUTO FUNDACIÓN MIER Y PESADO</h2>
+    <h1>CERTIFICACIÓN DE INGLÉS</h1>
+    <h1>Convocatoria 2026</h1>
+    <h2>INSTITUTO FUNDACIÓN MIER Y PESADO</h2>
 
-  <h3>Estimada comunidad de Instituto Fundación Mier y Pesado:</h3>
-  <p>Es un gusto informarles que en este ciclo escolar se continuará con el proyecto de certificación de Cambridge.</p>
-
-  <h3>Siga los siguientes pasos para realizar su inscripción:</h3>
-
-  <p>
-    <a href="https://lvsihmx.github.io/convocatoria/img/terminos%20y%20condiciones%20u.html" class="btn">
-      De click aquí para revisar los términos y condiciones
-    </a>
-  </p>
-
-  <div>
-    <strong>1.- Realice su pago en el siguiente link:                            </strong>
+    <h3>Estimada comunidad de Instituto Fundación Mier y Pesado:</h3>
     <p>
-      <a href="pegar-el-link" class="btn">De click aquí para realizar el pago</a>
+        Es un gusto informarles que en este ciclo escolar se continuará con el proyecto
+        de certificación de Cambridge, ofreciendo a nuestros alumnos la oportunidad de obtener una
+        acreditación de validez internacional.
     </p>
-  </div>
 
-  <div>
+    <h3>Siga los siguientes pasos para realizar su inscripción:</h3>
+
+    <p style="text-align: center;">
+        <a href="https://lvsihmx.github.io/convocatoria/img/terminos%20y%20condiciones%20u.html" class="btn">
+            1. Revisar términos y condiciones
+        </a>
+    </p>
+
+    <div class="grid-steps">
+        <div>
+            <strong>2. Realice su pago:</strong>
+            <p>Realice el pago de contado o la primera parcialidad del examen.</p>
+            <p>
+                <a href="pegar-el-link" class="btn">De click aquí para realizar el pago</a>
+            </p>
+        </div>
+
+        <div>
+            <strong>3. Registro de Candidato(a) y Comprobantes:</strong>
+            <p>
+                Cuando haya realizado <u>el pago total</u> (de contado o en todas las exhibiciones), registre los datos del candidato(a) y suba los comprobantes.
+            </p>
+            <p>
+                <a href="https://forms.gle/E9oEqvQLLfgDrC2c9" class="btn">
+                    Registro de pago completo - Click aquí
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <h2><u>Fechas de pago y precios</u></h2>
+
     <p>
-      <strong>2.-Cuando haya realizado <u>el pago total</u> (de contado o en todas las exhibiciones), registre los datos del candidato(a) y suba los comprobantes:</strong>
+        La última fecha de pago para cubrir el monto total del examen es el <strong>17 de diciembre de 2025</strong>. Puede hacer el pago en parcialidades o de contado.
+        Si se le pasa alguna fecha de parcialidad, puede cubrir los montos acumulados en la siguiente.
     </p>
     <p>
-      <a href="https://forms.gle/E9oEqvQLLfgDrC2c9" class="btn">
-        Pago completo — Click aquí para ingresar al registro
-      </a>
+        El único requisito final para asegurar la inscripción es haber liquidado el precio total del examen a más tardar el <strong>17 de diciembre</strong>.
+        En caso de no cubrir el precio total, no se le podrá inscribir en la fecha programada.
     </p>
-  </div>
+    <p>
+        La fecha del examen está programada para el <strong>21 de marzo de 2026</strong>.
+    </p>
+    <p>
+        **Políticas:** No hay devoluciones parciales ni totales una vez que haya realizado un primer pago o la totalidad. Su lugar se reserva
+        en la fecha y nivel del examen correspondiente. Considere tener disponible la fecha del examen, ya que **no hay devoluciones ni cambios**.
+    </p>
 
-  <h2><u>Fechas de pago y precios</u></h2>
-  <p>
-    La última fecha de pago es el <strong>17 de diciembre</strong>. Puede hacer el pago en parcialidades o de contado.
-    Si se le pasa alguna fecha, puede cubrir los montos en la siguiente.
-  </p>
-  <p>
-    El único requisito para hacer su inscripción es haber pagado el precio total del examen a más tardar el <strong>17 de diciembre</strong>.
-    En caso de no cubrir el precio total del examen, no se le podrá inscribir en la fecha programada.
-  </p>
-  <p>
-    La fecha del examen está programada para el <strong>21 de marzo de 2026</strong>.
-  </p>
-  <p>
-    No hay devoluciones parciales ni totales una vez que haya realizado un primer pago o la totalidad. Su lugar se reserva
-    en la fecha y nivel del examen correspondiente.
-  </p>
-  <p>
-    Considere tener disponible la fecha del examen, ya que no hay devoluciones ni cambios.
-  </p>
-
-  <table>
-    <caption>Precios y Pagos de Exámenes</caption>
-    <thead>
-      <tr>
-        <th>EXAMEN</th>
-        <th>PRECIO DE CONTADO</th>
-        <th>Pago1 — Del 7 al 31 de octubre</th>
-        <th>Pago2 — 1 al 30 de noviembre</th>
-        <th>Pago3 — 1 al 17 de diciembre</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>starters</td><td>$ 2,306.00</td><td>$ 769</td><td>$ 769</td><td>$ 769</td></tr>
-      <tr><td>movers</td><td>$ 2,582.00</td><td>$ 861</td><td>$ 861</td><td>$ 861</td></tr>
-      <tr><td>flyers</td><td>$ 2,822.00</td><td>$ 941</td><td>$ 941</td><td>$ 941</td></tr>
-      <tr><td>key</td><td>$ 3,494.00</td><td>$ 1,165</td><td>$ 1,165</td><td>$ 1,165</td></tr>
-      <tr><td>pet</td><td>$ 3,651.00</td><td>$ 1,217</td><td>$ 1,217</td><td>$ 1,217</td></tr>
-      <tr><td>fce</td><td>$ 5,967.00</td><td>$ 1,989</td><td>$ 1,989</td><td>$ 1,989</td></tr>
-      <tr><td>CAE</td><td>$ 6,999.00</td><td>$ 2,333</td><td>$ 2,333</td><td>$ 2,333</td></tr>
-    </tbody>
-  </table>
+    <div class="table-wrapper">
+        <table>
+            <caption>Precios y Pagos de Exámenes</caption>
+            <thead>
+                <tr>
+                    <th>EXAMEN</th>
+                    <th>PRECIO DE CONTADO</th>
+                    <th>Pago 1 <br> (7 al 31 de octubre)</th>
+                    <th>Pago 2 <br> (1 al 30 de noviembre)</th>
+                    <th>Pago 3 <br> (1 al 17 de diciembre)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>STARTERS</td><td>$2,306.00</td><td>$769</td><td>$769</td><td>$769</td></tr>
+                <tr><td>MOVERS</td><td>$2,582.00</td><td>$861</td><td>$861</td><td>$861</td></tr>
+                <tr><td>FLYERS</td><td>$2,822.00</td><td>$941</td><td>$941</td><td>$941</td></tr>
+                <tr><td>KEY</td><td>$3,494.00</td><td>$1,165</td><td>$1,165</td><td>$1,165</td></tr>
+                <tr><td>PET</td><td>$3,651.00</td><td>$1,217</td><td>$1,217</td><td>$1,217</td></tr>
+                <tr><td>FCE</td><td>$5,967.00</td><td>$1,989</td><td>$1,989</td><td>$1,989</td></tr>
+                <tr><td>CAE</td><td>$6,999.00</td><td>$2,333</td><td>$2,333</td><td>$2,333</td></tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
 
