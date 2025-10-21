@@ -141,22 +141,28 @@
         }
 
         /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 15px 10px; box-shadow: none; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            .grid { flex-direction: column; gap: 15px; }
+            p { padding: 0 5px; }
+        }
 
-       @media (max-width: 600px) {
-    #customModal .modal-content {
-        /* CAMBIO INICIO: posición en la esquina superior izquierda */
-        width: 85%;
-        margin: 20px; /* antes era margin: 40vh auto; */
-        padding: 20px;
-        position: absolute; /* necesario para ubicarlo en la esquina */
-        top: 0;
-        left: 0;
-        transform: none; /* eliminamos el scale y centrado */
-        /* CAMBIO FIN */
-    }
-    #customModal p { font-size: 0.95em; }
-    #modalButton { width: 100%; padding: 12px; }
-}
+        /* ================================
+           INICIO: POP-UP
+        =================================*/
+        #customModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
         #customModal.show {
             display: block;
@@ -202,11 +208,16 @@
             transform: scale(1.05);
         }
 
+        /* POP-UP MÓVIL: esquina superior izquierda */
         @media (max-width: 600px) {
             #customModal .modal-content {
                 width: 85%;
-                margin: 40vh auto;
+                margin: 20px; /* margen desde el borde */
                 padding: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
             }
             #customModal p { font-size: 0.95em; }
             #modalButton { width: 100%; padding: 12px; }
@@ -258,10 +269,6 @@
         </div>
     </div>
 
-   
-
-  <!-- Aquí continúa tu tabla -->
-
     <h2><u>Fechas de pago y precios</u></h2>
 
     <div class="info-section">
@@ -276,8 +283,8 @@
             La fecha del examen está programada para el <strong>23 de mayo de 2026</strong>.
         </p>
          <p>
-Si el candidato (a)necesita alguna adecuación especial física(rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc. .) o usa algún aparato (ejemplo, para escuchar bien.)  
-        Debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
+Si el candidato(a) necesita alguna adecuación especial física (rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc.) o usa algún aparato (ejemplo, para escuchar bien)  
+        debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
          </p>
         <p>
             **Políticas:** No hay devoluciones parciales ni totales una vez que realice el primer pago o el total.
@@ -370,18 +377,8 @@ Si el candidato (a)necesita alguna adecuación especial física(rampas, auditiva
 
 </div>
 
-</div>
-
-
-    <!-- Aquí continúa tu tabla -->
-
-
-
-
-</div>
-
 <!-- ================================
-     POP-UP MODAL FINAL
+     POP-UP MODAL
 ================================= -->
 <div id="customModal">
     <div class="modal-content">
@@ -401,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (e) {
             e.preventDefault();
             redirectUrl = this.href;
-            modal.classList.add("show");
+            modal.classList.add("show"); // solo se muestra al hacer click
         });
     });
 
