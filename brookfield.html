@@ -141,28 +141,22 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .container { padding: 15px 10px; box-shadow: none; }
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.3rem; }
-            .grid { flex-direction: column; gap: 15px; }
-            p { padding: 0 5px; }
-        }
 
-        /* ================================
-           INICIO: POP-UP Estilo del último código
-        =================================*/
-        #customModal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(6px);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
+       @media (max-width: 600px) {
+    #customModal .modal-content {
+        /* CAMBIO INICIO: posición en la esquina superior izquierda */
+        width: 85%;
+        margin: 20px; /* antes era margin: 40vh auto; */
+        padding: 20px;
+        position: absolute; /* necesario para ubicarlo en la esquina */
+        top: 0;
+        left: 0;
+        transform: none; /* eliminamos el scale y centrado */
+        /* CAMBIO FIN */
+    }
+    #customModal p { font-size: 0.95em; }
+    #modalButton { width: 100%; padding: 12px; }
+}
 
         #customModal.show {
             display: block;
