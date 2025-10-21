@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ======================== INICIO DE ESTILOS ORIGINALES ======================== */
+        /* Variables y Reset Básico */
         :root {
-            --primary-color: #0d3b66; 
-            --secondary-color: #125a99; 
+            --primary-color: #0d3b66;
+            --secondary-color: #125a99;
             --text-color: #333333;
             --light-bg: #f7f7f7;
             --white: white;
@@ -45,7 +45,6 @@
             color: var(--primary-color);
             font-size: 2.2rem;
             font-weight: 700;
-            padding-bottom: 5px;
         }
 
         h2 {
@@ -71,6 +70,7 @@
             padding: 0 15px;
         }
 
+        /* Botones */
         a.btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -90,6 +90,7 @@
             transform: translateY(-2px);
         }
 
+        /* Layout Grid */
         .grid {
             display: flex;
             flex-wrap: wrap;
@@ -124,81 +125,9 @@
             margin: 20px auto;
         }
 
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 30px 0;
-            padding: 0 15px;
-        }
-
-        table {
-            border-collapse: separate;
-            border-spacing: 0;
-            width: 100%;
-            min-width: 700px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.9rem;
-            margin: 0 auto;
-        }
-
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 10px 8px;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        th {
-            background-color: var(--header-bg);
-            color: var(--white);
-            font-weight: 600;
-            border-color: var(--header-bg);
-        }
-
-        thead tr:first-child th:first-child { border-top-left-radius: 8px; }
-        thead tr:first-child th:last-child { border-top-right-radius: 8px; }
-
-        td:first-child {
-            text-align: left;
-            font-weight: 700;
-            color: var(--primary-color);
-            background-color: #eef2f6;
-        }
-
-        td:nth-child(n+2) {
-            text-align: right;
-            font-family: monospace;
-        }
-
-        tbody tr:nth-child(odd) { background-color: var(--white); }
-        tbody tr:nth-child(even) { background-color: var(--light-bg); }
-
-        .header-dates {
-            font-size: 0.75rem;
-            line-height: 1.3;
-            font-weight: 400;
-            background-color: #2b547d;
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 15px 10px; box-shadow: none; }
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.3rem; }
-            .grid { flex-direction: column; gap: 15px; }
-            .grid > div { min-width: 100%; max-width: 100%; padding: 15px; }
-            p { padding: 0 5px; }
-            table { font-size: 0.8rem; }
-            th, td { padding: 6px 4px; }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.4rem; }
-            h2 { font-size: 1.1rem; }
-            a.btn { font-size: 0.85rem; padding: 10px 15px; }
-        }
-        /* ========================= FIN DE ESTILOS ORIGINALES ========================= */
-
-        /* ======================== INICIO DE CAMBIOS AGREGADOS/MODIFICADOS ======================== */
-        /* Estilos modal */
+        /* ================================
+           AGREGADO: Estilos para el POP-UP
+        =================================*/
         .modal {
             display: none;
             position: fixed;
@@ -216,12 +145,13 @@
             border-radius: 10px;
             text-align: center;
             max-width: 400px;
-            width: 90%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             font-size: 1rem;
         }
 
-        .modal-content p { margin-bottom: 20px; }
+        .modal-content p {
+            margin-bottom: 20px;
+        }
 
         .modal button {
             background-color: var(--primary-color);
@@ -233,23 +163,31 @@
             font-weight: 600;
         }
 
-        .modal button:hover { background-color: var(--secondary-color); }
-
-        /* Adaptación responsive del modal para pantallas pequeñas: pantalla casi completa */
-        @media (max-width: 600px) {
-            .modal-content {
-                max-width: 98%;
-                height: 90vh; /* casi toda la altura */
-                padding: 20px;
-                overflow-y: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .modal-content p { font-size: 0.95rem; }
-            .modal button { width: 100%; padding: 12px; font-size: 0.95rem; margin-top: 10px; }
+        .modal button:hover {
+            background-color: var(--secondary-color);
         }
-        /* ========================= FIN DE CAMBIOS AGREGADOS/MODIFICADOS ========================= */
+        /* ================================ */
+
+        /* ================================
+           INICIO CAMBIOS: Adaptación móvil del POP-UP
+        =================================*/
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 90%;          /* ocupa casi todo el ancho */
+                padding: 20px 15px;  /* reduce el padding para móviles */
+                font-size: 0.95rem;  /* ajusta un poco el texto */
+            }
+        }
+        /* FIN CAMBIOS: Adaptación móvil del POP-UP */
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 15px 10px; box-shadow: none; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            .grid { flex-direction: column; gap: 15px; }
+            p { padding: 0 5px; }
+        }
     </style>
 </head>
 
@@ -282,9 +220,7 @@
             <strong>2. Realice su pago:</strong>
             <p>Realice el pago de contado o en parcialidades.</p>
             <p>
-                <!-- ================= INICIO CAMBIO: botón con ID para modal ================= -->
                 <a href="#" class="btn" id="pagoBtn">Realizar pago</a>
-                <!-- ================= FIN CAMBIO ================= -->
             </p>
         </div>
 
@@ -297,11 +233,6 @@
             </p>
         </div>
     </div>
-
-
-
-
-<!-- Aquí continúa tu tabla -->
 
     <h2><u>Fechas de pago y precios</u></h2>
 
@@ -317,7 +248,7 @@
             La fecha del examen está programada para el <strong>23 de mayo de 2026</strong>.
         </p>
          <p>
-Si el candidato (a)necesita alguna adecuación especial física(rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc. .) o usa algún aparato (ejemplo, para escuchar bien.)  
+Si el candidato (a) necesita alguna adecuación especial física (rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc.) o usa algún aparato (ejemplo, para escuchar bien).  
         Debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
          </p>
         <p>
@@ -411,42 +342,37 @@ Si el candidato (a)necesita alguna adecuación especial física(rampas, auditiva
 
 </div>
 
-</div>
-
-
-    <!-- Aquí termina tu tabla -->
-
-
-
-
-</div>
-
-<!-- ================= INICIO CAMBIO: estructura del modal ================= -->
+<!-- ========================================
+     AGREGADO: Estructura del POP-UP Modal
+========================================= -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <p><strong>Una vez que tenga todos sus pagos</strong> regrese a este link para realizar su registro.</p>
         <button id="aceptarBtn">Aceptar</button>
     </div>
 </div>
-<!-- ================= FIN CAMBIO ================= -->
+<!-- ======================================== -->
 
-<!-- ================= INICIO CAMBIO: script para abrir/cerrar modal ================= -->
+<!-- ========================================
+     AGREGADO: Script para controlar el pop-up
+========================================= -->
 <script>
     const pagoBtn = document.getElementById('pagoBtn');
     const modal = document.getElementById('modal');
     const aceptarBtn = document.getElementById('aceptarBtn');
 
     pagoBtn.addEventListener('click', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // evita redirección inmediata
         modal.style.display = 'flex';
     });
 
     aceptarBtn.addEventListener('click', function() {
         modal.style.display = 'none';
+        // redirige al sitio de pago después de aceptar
         window.location.href = "https://pay.ihmexico.mx/servicios/colegio-brookfield/";
     });
 </script>
-<!-- ================= FIN CAMBIO ================= -->
+<!-- ======================================== -->
 
 </body>
 </html>
