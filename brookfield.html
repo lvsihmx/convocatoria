@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Variables y Reset Básico */
         :root {
             --primary-color: #0d3b66;
             --secondary-color: #125a99;
@@ -40,34 +39,11 @@
             line-height: 1.2;
         }
 
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
+        h1 { color: var(--primary-color); font-size: 2.2rem; font-weight: 700; }
+        h2 { color: var(--secondary-color); font-size: 1.5rem; font-weight: 600; margin-top: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        h3 { color: var(--primary-color); font-size: 1.2rem; font-weight: 700; margin-top: 25px; }
 
-        h2 {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 30px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-top: 25px;
-        }
-
-        p {
-            text-align: justify;
-            line-height: 1.6;
-            margin: 15px 0;
-            padding: 0 15px;
-        }
+        p { text-align: justify; line-height: 1.6; margin: 15px 0; padding: 0 15px; }
 
         a.btn {
             display: inline-block;
@@ -115,32 +91,12 @@
             color: var(--primary-color);
         }
 
-        img {
-            max-width: 250px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
+        img { max-width: 250px; height: auto; display: block; margin: 20px auto; }
 
-        /* Tabla */
-        .table-wrapper table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+        .table-wrapper table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .table-wrapper th, .table-wrapper td { border: 1px solid var(--border-color); padding: 8px 10px; text-align: center; }
+        .table-wrapper th { background-color: var(--primary-color); color: var(--white); }
 
-        .table-wrapper th, .table-wrapper td {
-            border: 1px solid var(--border-color);
-            padding: 8px 10px;
-            text-align: center;
-        }
-
-        .table-wrapper th {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .container { padding: 15px 10px; box-shadow: none; }
             h1 { font-size: 1.8rem; }
@@ -150,7 +106,7 @@
         }
 
         /* ================================
-           INICIO: POP-UP
+           POP-UP
         =================================*/
         #customModal {
             display: none;
@@ -186,11 +142,7 @@
             transform: scale(1);
         }
 
-        #customModal p {
-            margin-bottom: 25px;
-            font-size: 1.05em;
-            color: #333;
-        }
+        #customModal p { margin-bottom: 25px; font-size: 1.05em; color: #333; }
 
         #modalButton {
             background-color: var(--primary-color);
@@ -208,20 +160,6 @@
             transform: scale(1.05);
         }
 
-        /* POP-UP MÓVIL: esquina superior izquierda */
-        @media (max-width: 600px) {
-            #customModal .modal-content {
-                width: 85%;
-                margin: 20px; /* margen desde el borde */
-                padding: 20px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: none;
-            }
-            #customModal p { font-size: 0.95em; }
-            #modalButton { width: 100%; padding: 12px; }
-        }
         /* FIN POP-UP */
     </style>
 </head>
@@ -377,16 +315,13 @@ Si el candidato(a) necesita alguna adecuación especial física (rampas, auditiv
 
 </div>
 
-<!-- ================================
-     POP-UP MODAL
-================================= -->
+<!-- POP-UP MODAL -->
 <div id="customModal">
     <div class="modal-content">
-        <p>Una vez que tengas tus pagos, regresa a este link para registrar tu inscripción.</p>
+        <p>Una vez que tengas todos tus pagos, regresa a este link para registrar tu inscripción.Da click en aceptar para continuar</p>
         <button id="modalButton">Aceptar</button>
     </div>
 </div>
-<!-- ================================ -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -398,7 +333,27 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (e) {
             e.preventDefault();
             redirectUrl = this.href;
-            modal.classList.add("show"); // solo se muestra al hacer click
+
+            if (window.innerWidth <= 600) { // móvil
+                const rect = this.getBoundingClientRect();
+                modal.style.position = "absolute";
+                modal.style.top = window.scrollY + rect.top + "px";
+                modal.style.left = rect.left + "px";
+                modal.style.width = rect.width + "px";
+                modal.style.maxWidth = "none";
+                modal.style.margin = "0";
+                modal.style.transform = "none";
+            } else { // escritorio
+                modal.style.position = "fixed";
+                modal.style.top = "";
+                modal.style.left = "";
+                modal.style.width = "90%";
+                modal.style.maxWidth = "400px";
+                modal.style.margin = "20vh auto";
+                modal.style.transform = "scale(0.9)";
+            }
+
+            modal.classList.add("show");
         });
     });
 
