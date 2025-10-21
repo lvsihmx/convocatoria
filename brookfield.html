@@ -1,165 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificación de Inglés - Convocatoria 2026</title>
-<link rel="stylesheet" href="https://lvsihmx.github.io/certificadoih/img/main.css">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificación de Inglés - Convocatoria 2026</title>
+    <link rel="stylesheet" href="https://lvsihmx.github.io/certificadoih/img/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* ======================== INICIO DE ESTILOS ORIGINALES ======================== */
-:root {
-    --primary-color: #0d3b66; 
-    --secondary-color: #125a99; 
-    --text-color: #333333;
-    --light-bg: #f7f7f7;
-    --white: white;
-    --border-color: #dddddd;
-    --header-bg: #0d3b66;
-}
+    <style>
+        /* ======================== INICIO DE ESTILOS ORIGINALES ======================== */
+        :root {
+            --primary-color: #0d3b66; 
+            --secondary-color: #125a99; 
+            --text-color: #333333;
+            --light-bg: #f7f7f7;
+            --white: white;
+            --border-color: #dddddd;
+            --header-bg: #0d3b66;
+        }
 
-body {
-    background-color: var(--light-bg);
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: var(--text-color);
-}
+        body {
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text-color);
+        }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--white);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-h1, h2, h3 { text-align: center; margin: 15px 0; line-height: 1.2; }
+        h1, h2, h3 {
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.2;
+        }
 
-h1 { color: var(--primary-color); font-size: 2.2rem; font-weight: 700; padding-bottom: 5px; }
-h2 { color: var(--secondary-color); font-size: 1.5rem; font-weight: 600; margin-top: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
-h3 { color: var(--primary-color); font-size: 1.2rem; font-weight: 700; margin-top: 25px; }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 700;
+            padding-bottom: 5px;
+        }
 
-p { text-align: justify; line-height: 1.6; margin: 15px 0; padding: 0 15px; }
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
 
-a.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 10px 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-a.btn:hover { background-color: var(--secondary-color); transform: translateY(-2px); }
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 25px;
+        }
 
-.grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 30px 0; }
-.grid > div { flex: 1 1 300px; min-width: 280px; max-width: 450px; text-align: center; padding: 20px; border: 1px solid var(--border-color); border-radius: 10px; background-color: var(--white); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
-.grid strong { display: block; margin-bottom: 15px; font-size: 1.1rem; color: var(--primary-color); }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 15px 0;
+            padding: 0 15px;
+        }
 
-img { max-width: 250px; height: auto; display: block; margin: 20px auto; }
+        a.btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 10px 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-.table-wrapper { overflow-x: auto; margin: 30px 0; padding: 0 15px; }
+        a.btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
 
-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-    min-width: 700px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.9rem;
-    margin: 0 auto;
-}
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 30px 0;
+        }
 
-th, td { border: 1px solid var(--border-color); padding: 10px 8px; text-align: center; vertical-align: middle; }
-th { background-color: var(--header-bg); color: var(--white); font-weight: 600; border-color: var(--header-bg); }
+        .grid > div {
+            flex: 1 1 300px;
+            min-width: 280px;
+            max-width: 450px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
 
-thead tr:first-child th:first-child { border-top-left-radius: 8px; }
-thead tr:first-child th:last-child { border-top-right-radius: 8px; }
+        .grid strong {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
 
-td:first-child { text-align: left; font-weight: 700; color: var(--primary-color); background-color: #eef2f6; }
-td:nth-child(n+2) { text-align: right; font-family: monospace; }
+        img {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
 
-tbody tr:nth-child(odd) { background-color: var(--white); }
-tbody tr:nth-child(even) { background-color: var(--light-bg); }
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 30px 0;
+            padding: 0 15px;
+        }
 
-.header-dates { font-size: 0.75rem; line-height: 1.3; font-weight: 400; background-color: #2b547d; }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            min-width: 700px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            margin: 0 auto;
+        }
 
-@media (max-width: 768px) {
-    .container { padding: 15px 10px; box-shadow: none; }
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.3rem; }
-    .grid { flex-direction: column; gap: 15px; }
-    .grid > div { min-width: 100%; max-width: 100%; padding: 15px; }
-    p { padding: 0 5px; }
-    table { font-size: 0.8rem; }
-    th, td { padding: 6px 4px; }
-}
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
 
-@media (max-width: 480px) {
-    h1 { font-size: 1.4rem; }
-    h2 { font-size: 1.1rem; }
-    a.btn { font-size: 0.85rem; padding: 10px 15px; }
-}
-/* ========================= FIN DE ESTILOS ORIGINALES ========================= */
+        th {
+            background-color: var(--header-bg);
+            color: var(--white);
+            font-weight: 600;
+            border-color: var(--header-bg);
+        }
 
-/* ======================== INICIO DE CAMBIOS AGREGADOS/MODIFICADOS ======================== */
-/* Modal estilo app con animación deslizante */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    justify-content: flex-end; /* para que aparezca abajo */
-    align-items: flex-end;
-    overflow: hidden;
-}
+        thead tr:first-child th:first-child { border-top-left-radius: 8px; }
+        thead tr:first-child th:last-child { border-top-right-radius: 8px; }
 
-.modal-content {
-    background-color: var(--white);
-    padding: 25px 30px;
-    border-radius: 15px 15px 0 0; /* solo redondeado arriba */
-    text-align: center;
-    width: 100%;
-    max-height: 80vh;
-    transform: translateY(100%);
-    transition: transform 0.4s ease-in-out;
-    overflow-y: auto;
-    font-size: 1rem;
-}
+        td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #eef2f6;
+        }
 
-.modal-content.show {
-    transform: translateY(0); /* desliza hacia arriba */
-}
+        td:nth-child(n+2) {
+            text-align: right;
+            font-family: monospace;
+        }
 
-.modal-content p { margin-bottom: 20px; }
+        tbody tr:nth-child(odd) { background-color: var(--white); }
+        tbody tr:nth-child(even) { background-color: var(--light-bg); }
 
-.modal button {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    width: 100%;
-}
+        .header-dates {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            font-weight: 400;
+            background-color: #2b547d;
+        }
 
-.modal button:hover { background-color: var(--secondary-color); }
+        @media (max-width: 768px) {
+            .container { padding: 15px 10px; box-shadow: none; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            .grid { flex-direction: column; gap: 15px; }
+            .grid > div { min-width: 100%; max-width: 100%; padding: 15px; }
+            p { padding: 0 5px; }
+            table { font-size: 0.8rem; }
+            th, td { padding: 6px 4px; }
+        }
 
-/* Modal tipo app completo en pantallas pequeñas */
-@media (max-width: 600px) {
-    .modal-content { max-height: 90vh; border-radius: 15px 15px 0 0; }
-}
-/* ========================= FIN DE CAMBIOS AGREGADOS/MODIFICADOS ========================= */
-</style>
+        @media (max-width: 480px) {
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.1rem; }
+            a.btn { font-size: 0.85rem; padding: 10px 15px; }
+        }
+        /* ========================= FIN DE ESTILOS ORIGINALES ========================= */
+
+        /* ======================== INICIO DE CAMBIOS AGREGADOS/MODIFICADOS ======================== */
+        /* Estilos modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 25px 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1rem;
+        }
+
+        .modal-content p { margin-bottom: 20px; }
+
+        .modal button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .modal button:hover { background-color: var(--secondary-color); }
+
+        /* Adaptación responsive del modal para pantallas pequeñas: pantalla casi completa */
+        @media (max-width: 600px) {
+            .modal-content {
+                max-width: 98%;
+                height: 90vh; /* casi toda la altura */
+                padding: 20px;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .modal-content p { font-size: 0.95rem; }
+            .modal button { width: 100%; padding: 12px; font-size: 0.95rem; margin-top: 10px; }
+        }
+        /* ========================= FIN DE CAMBIOS AGREGADOS/MODIFICADOS ========================= */
+    </style>
 </head>
 
 <body>
@@ -207,155 +298,33 @@ tbody tr:nth-child(even) { background-color: var(--light-bg); }
         </div>
     </div>
 
-
-<!-- Aquí continúa tu tabla -->
-
     <h2><u>Fechas de pago y precios</u></h2>
-
-    <div class="info-section">
-        <p>
-            La última fecha de pago para cubrir el monto total del examen es el <strong>23 de enero de 2026</strong>. Puede realizar pagos en parcialidades o de contado.
-            Si por alguna razón se le pasa alguna fecha de parcialidad, puede cubrir el monto acumulado en la siguiente fecha.
-            El único requisito final para asegurar la inscripción es haber liquidado el precio total del examen antes del 23 de enero del 2026.
-        </p>
-
-        <p>
-            **Importante:** En caso de no cubrir el precio total del examen antes de la fecha límite, no se podrá realizar la inscripción en la fecha programada.
-            La fecha del examen está programada para el <strong>23 de mayo de 2026</strong>.
-        </p>
-         <p>
-Si el candidato (a)necesita alguna adecuación especial física(rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc. .) o usa algún aparato (ejemplo, para escuchar bien.)  
-        Debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
-         </p>
-        <p>
-            **Políticas:** No hay devoluciones parciales ni totales una vez que realice el primer pago o el total.
-            Su lugar queda reservado para la fecha y nivel correspondiente.
-            Considere atentamente las fechas del examen, ya que **no hay posibilidad de cambios ni devoluciones**.
-        </p>
-    </div>
-
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">EXAMEN</th>
-                    <th rowspan="2">PRECIO DE CONTADO</th>
-                    <th colspan="6">PAGOS EN PARCIALIDADES (6 Pagos Iguales)</th>
-                </tr>
-                <tr>
-                    <th class="header-dates">1er pago <br> (31 Oct - 3 Nov 2025)</th>
-                    <th class="header-dates">2º pago <br> (14 - 17 Nov 2025)</th>
-                    <th class="header-dates">3er pago <br> (28 Nov - 1 Dic 2025)</th>
-                    <th class="header-dates">4to pago <br> (15 - 17 Dic 2025)</th>
-                    <th class="header-dates">5to pago <br> (29 Dic 2025 - 1 Ene 2026)</th>
-                    <th class="header-dates">6to pago <br> (15 - 23 Ene 2026)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>STARTERS</td>
-                    <td>$2,950</td>
-                    <td>$491.67</td>
-                    <td>$491.67</td>
-                    <td>$491.67</td>
-                    <td>$491.67</td>
-                    <td>$491.67</td>
-                    <td>$491.67</td>
-                </tr>
-                <tr>
-                    <td>MOVERS</td>
-                    <td>$3,190</td>
-                    <td>$531.67</td>
-                    <td>$531.67</td>
-                    <td>$531.67</td>
-                    <td>$531.67</td>
-                    <td>$531.67</td>
-                    <td>$531.67</td>
-                </tr>
-                <tr>
-                    <td>FLYERS</td>
-                    <td>$3,320</td>
-                    <td>$553.33</td>
-                    <td>$553.33</td>
-                    <td>$553.33</td>
-                    <td>$553.33</td>
-                    <td>$553.33</td>
-                    <td>$553.33</td>
-                </tr>
-                <tr>
-                    <td>KEY</td>
-                    <td>$3,999</td>
-                    <td>$666.50</td>
-                    <td>$666.50</td>
-                    <td>$666.50</td>
-                    <td>$666.50</td>
-                    <td>$666.50</td>
-                    <td>$666.50</td>
-                </tr>
-                <tr>
-                    <td>PET</td>
-                    <td>$4,190</td>
-                    <td>$698.33</td>
-                    <td>$698.33</td>
-                    <td>$698.33</td>
-                    <td>$698.33</td>
-                    <td>$698.33</td>
-                    <td>$698.33</td>
-                </tr>
-                <tr>
-                    <td>FCE</td>
-                    <td>$6,940</td>
-                    <td>$1,156.67</td>
-                    <td>$1,156.67</td>
-                    <td>$1,156.67</td>
-                    <td>$1,156.67</td>
-                    <td>$1,156.67</td>
-                    <td>$1,156.67</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-</div>
-
-</div>
-
-
-    <!-- Aquí termina tu tabla -->
-
-
-
-
-
-
 </div>
 
 <!-- ================= INICIO CAMBIO: estructura del modal ================= -->
 <div id="modal" class="modal">
-    <div class="modal-content" id="modalContent">
+    <div class="modal-content">
         <p><strong>Una vez que tenga todos sus pagos</strong> regrese a este link para realizar su registro.</p>
         <button id="aceptarBtn">Aceptar</button>
     </div>
 </div>
 <!-- ================= FIN CAMBIO ================= -->
 
-<!-- ================= INICIO CAMBIO: script para abrir/cerrar modal con animación ================= -->
+<!-- ================= INICIO CAMBIO: script para abrir/cerrar modal ================= -->
 <script>
-const pagoBtn = document.getElementById('pagoBtn');
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modalContent');
-const aceptarBtn = document.getElementById('aceptarBtn');
+    const pagoBtn = document.getElementById('pagoBtn');
+    const modal = document.getElementById('modal');
+    const aceptarBtn = document.getElementById('aceptarBtn');
 
-pagoBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    modal.style.display = 'flex';
-    setTimeout(() => { modalContent.classList.add('show'); }, 10); // anima deslizamiento
-});
+    pagoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    });
 
-aceptarBtn.addEventListener('click', function() {
-    modalContent.classList.remove('show');
-    setTimeout(() => { modal.style.display = 'none'; window.location.href = "https://pay.ihmexico.mx/servicios/colegio-brookfield/"; }, 400);
-});
+    aceptarBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        window.location.href = "https://pay.ihmexico.mx/servicios/colegio-brookfield/";
+    });
 </script>
 <!-- ================= FIN CAMBIO ================= -->
 
