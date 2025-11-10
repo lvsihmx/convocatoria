@@ -6,16 +6,15 @@
     <title>Certificación de Inglés - Instituto Fundación Mier y Pesado</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://lvsihmx.github.io/certificadoih/img/main.css">
 
     <style>
         /* Variables y Reset Básico */
         :root {
-            --primary-color: #002060; /* Azul Oscuro (Mier y Pesado) */
-            --secondary-color: #003366; /* Tono más oscuro para hover */
+            --primary-color: #002060;
+            --secondary-color: #003366;
             --text-color: #333333;
-            --light-bg: #f7f9fc; /* Fondo ligeramente azulado/gris */
+            --light-bg: #f7f9fc;
             --white: white;
             --border-color: #dddddd;
             --header-bg: #002060;
@@ -34,10 +33,9 @@
             margin: 0 auto;
             padding: 20px;
             background-color: var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        /* Títulos */
         h1, h2, h3 {
             text-align: center;
             margin: 15px 0;
@@ -70,11 +68,10 @@
             text-align: justify;
             line-height: 1.6;
             margin: 15px auto;
-            max-width: 950px; /* Ancho ajustado para el contenedor */
+            max-width: 950px;
             padding: 0 15px;
         }
 
-        /* Imagen Logo */
         img {
             max-width: 250px;
             height: auto;
@@ -82,7 +79,6 @@
             margin: 20px auto;
         }
 
-        /* Botones */
         a.btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -103,8 +99,7 @@
             background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
-        
-        /* Contenedores de Pasos (Grid Layout) */
+
         .grid-steps {
             display: flex;
             flex-wrap: wrap;
@@ -134,7 +129,6 @@
             font-weight: 700;
         }
 
-        /* Tabla de Precios */
         .table-wrapper {
             overflow-x: auto;
             margin: 30px auto;
@@ -146,12 +140,12 @@
             border-collapse: separate;
             border-spacing: 0;
             width: 100%;
-            min-width: 650px; /* Evita que la tabla se colapse demasiado */
+            min-width: 650px;
             font-family: 'Open Sans', sans-serif;
             font-size: 0.9rem;
             margin: 0 auto;
             border-radius: 10px;
-            overflow: hidden; /* Necesario para que el border-radius de la tabla funcione con border-collapse: separate */
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
@@ -177,12 +171,7 @@
             background-color: var(--header-bg);
             color: var(--white);
         }
-        
-        th {
-            font-weight: 600;
-            border-color: var(--header-bg);
-        }
-        
+
         td:first-child {
             text-align: left;
             font-weight: 700;
@@ -192,10 +181,9 @@
 
         td:nth-child(n+2) {
             text-align: right;
-            font-family: monospace; /* Fuente monoespaciada para mejor alineación de números */
+            font-family: monospace;
         }
-        
-        /* Rayas de cebra mejoradas */
+
         tbody tr:nth-child(even) {
             background-color: #f0f3f8;
         }
@@ -205,36 +193,54 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Media Queries para Responsive Design */
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 25px 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1rem;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+        }
+
+        .modal button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .modal button:hover {
+            background-color: var(--secondary-color);
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 15px 10px;
-                box-shadow: none;
-            }
-            
+            .container { padding: 15px 10px; box-shadow: none; }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.3rem; }
-            
-            .grid-steps {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .grid-steps > div {
-                min-width: 100%;
-                max-width: 100%;
-                padding: 15px;
-            }
-            
+            .grid-steps { flex-direction: column; gap: 15px; }
             p { padding: 0 5px; }
-            
-            table {
-                font-size: 0.8rem;
-            }
-
-            th, td {
-                padding: 8px 4px;
-            }
+            table { font-size: 0.8rem; }
+            th, td { padding: 8px 4px; }
         }
     </style>
 </head>
@@ -268,7 +274,9 @@
             <strong>2. Realice su pago:</strong>
             <p>Realice el pago de contado o la primera parcialidad del examen.</p>
             <p>
-                <a href="https://pay.ihmexico.mx/servicios/instituto-fundacion-mier-y-pesado/" class="btn">De click aquí para realizar el pago</a>
+                <a href="https://pay.ihmexico.mx/servicios/instituto-fundacion-mier-y-pesado/" class="btn" id="pagoBtn">
+                    De click aquí para realizar el pago
+                </a>
             </p>
         </div>
 
@@ -299,10 +307,10 @@
         La fecha del examen está programada para el <strong>21 de marzo de 2026</strong>.
     </p>
 
-      <p>
-Si el candidato (a)necesita alguna adecuación especial física(rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc. .) o usa algún aparato (ejemplo, para escuchar bien.)?  
-        Debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
-         </p>
+    <p>
+        Si el candidato (a) necesita alguna adecuación especial física (rampas, auditivas) o psicológica (ejemplo TDA, ansiedad, etc.) o usa algún aparato (ejemplo, para escuchar bien),  
+        debe reportarlo al menos 2 meses antes de la fecha última de pago para que le informen los documentos que debe entregar.
+    </p>
     <p>
         **Políticas:** No hay devoluciones parciales ni totales una vez que haya realizado un primer pago o la totalidad. Su lugar se reserva
         en la fecha y nivel del examen correspondiente. Considere tener disponible la fecha del examen, ya que **no hay devoluciones ni cambios**.
@@ -331,8 +339,31 @@ Si el candidato (a)necesita alguna adecuación especial física(rampas, auditiva
             </tbody>
         </table>
     </div>
-
 </div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <p><strong>Una vez que tenga su(s) pago(s)</strong> regrese a este link para realizar su registro. Si lo hace en varias exhibiciones puede hacer un registro por pago o un registro por todos.</p>
+        <button id="aceptarBtn">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    const pagoBtn = document.getElementById('pagoBtn');
+    const modal = document.getElementById('modal');
+    const aceptarBtn = document.getElementById('aceptarBtn');
+
+    pagoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    });
+
+    aceptarBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        window.location.href = "https://pay.ihmexico.mx/servicios/instituto-fundacion-mier-y-pesado/";
+    });
+</script>
 
 </body>
 </html>
