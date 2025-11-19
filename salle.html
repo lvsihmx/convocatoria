@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificación de Inglés - Universidad Humanitas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --accent-color: #cc0033;
+            --light-bg: #f8f9fa;
+            --text-dark: #343a40;
+            --text-light: #6c757d;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+
+        .header img {
+            height: auto;
+            max-width: 48%;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-top: 15px;
+            text-align: justify;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .btn-green {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .btn-green:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .step-card {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            transition: box-shadow 0.3s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-header {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--text-light);
+        }
+
+        .results-section {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        /* === INICIO CAMBIOS POP-UP === */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+        }
+        /* === FIN CAMBIOS POP-UP === */
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .header img {
+                max-width: 60%;
+            }
+            /* === INICIO CAMBIO POPUP RESPONSIVE === */
+            .popup-content {
+                width: 90%;
+                max-width: 320px;
+            }
+            /* === FIN CAMBIO POPUP RESPONSIVE === */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <img src="https://lvsihmx.github.io/certificadoih/img/LOGOIHB.jpg" alt="Logo International House" />
+        <img src="https://lvsihmx.github.io/convocatoria/img/logosalle.png" alt="Logo Universidad Humanitas" />
+    </div>
+
+    <div class="title-section">
+        <h1>CERTIFICACIÓN DE INGLÉS</h1>
+        <h2 style="color: var(--accent-color);"></h2>
+        <h2 style="color: var(--primary-color);">UNIVERSIDAD LA SALLE.</h2>
+    </div>
+
+    <div class="steps-grid">
+        <div class="step-card">
+            <div class="step-header">
+                <span class="step-number">1</span>
+                <span class="step-title">Revisa fecha y examen a presentar.</span>
+            </div>
+            <p><strong>IMPORTANTE:</strong> Revisa la fecha en la que quieres tu examen, la inscripción deberas realizarla al menos 7 semanas antes.</p>
+           
+        </div>
+
+        <div class="step-card">
+            <div class="step-header">
+                <span class="step-number">2</span>
+                <span class="step-title">Realiza tu Pago.</span>
+            </div>
+            <p>El pago debe realizarse en una sola exhibición.</p>
+            <p style="color: var(--accent-color); font-weight: 700;">Asegúrate de guardar tu comprobante de pago.</p>
+            
+            <!-- === INICIO CAMBIO POP-UP === -->
+            <button class="btn btn-green" id="btnPago">IR AL LINK DE PAGO</button>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <h3>Atención</h3>
+                    <p>Cuando realices el pago, regresa a este link para tu registro.</p>
+                    <button class="btn btn-green" id="btnAceptar">Aceptar</button>
+                </div>
+            </div>
+            <!-- === FIN CAMBIO POP-UP === -->
+        </div>
+
+        <div class="step-card">
+            <div class="step-header">
+                <span class="step-number">3</span>
+                <span class="step-title">Registro y Documentos</span>
+            </div>
+            <p>Para este paso, ya debes contar con tu comprobante de pago y tu identificación oficial <p style="color: var(--accent-color); font-weight: 700;"> <strong>vigente</strong> </p>(solo se acepta INE o PASAPORTE).
+        
+            <a href="https://lvsihmx.github.io/convocatoria/IELTSLASALLE.HTML" class="btn btn-green">Da clic para iniciar registro.</a>
+        </div>
+    </div>
+
+    <h2 class="section-header">Fechas y Precios</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Examen</th>
+                
+                <th>Fecha Estimada del Examen 2026
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IELTS,KEY,PET,FCE,CAE,CPE</td>
+                <td><P> Enero 31</P><P> Febrero 28</P><P> Marzo 21</P><P> Abril 25</P><P> Mayo 30</P><P> Junio 20</P> (Sujetas a cambios.).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-header">Detalles de la Aplicación</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de Examen</th>
+                <th>Características Generales</th>
+                <th>Confirmación de Fecha y Sede</th>
+                <th>Duración Aproximada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Escrito</td>
+                <td>Para todos los exámenes la fecha mencionada en la convocatoria esta sujeta a cambios. La fecha y horario exactos se dan una semana antes, en caso de que no te llegará a tu correo debes mandar un correo a elvis.gomez@ihmexico.com</td>
+                <td>Recibirás la confirmación de horario, sede y día(s) de aplicación una semana antes de tu examen. </td>
+                <td>Entre 3 y 4 horas y media, dependiendo del examen que presentes.</td>
+            </tr>
+            <tr>
+                <td>Oral</td>
+                <td>Para todos los exámenes, generalmente coincide con la fecha del escrito, aunque en casos aislados puede ser un día distinto. El horario exacto se dará una semana antes.</td>
+                <td>Fecha y horarios confirmados se enviarán al correo que registraste.</td>
+                <td>20 minutos en promedio (el proceso completo desde el registro toma aproximadamente 1 hora).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-header">Entrega de Certificado y Resultados (IELTS)</h2>
+    <div class="results-section">
+
+        <p>Para el examen IELTS una vez realizado el examen, aproximadamente 5 días hábiles después, recibirás un correo electrónico para revisar tus resultados. Si no recibes el correo, no te preocupes, podrás recoger tu certificado en el campus.</p>
+
+<p>Para el caso de Cambridge en tu hoja de horarios viene un link de registro por cada candidato, guarda tu usuario y contraseña</p>
+        <p><strong>CONFIDENCIALIDAD:</strong> Solo el candidato tiene acceso a sus resultados. Ninguna otra persona o área tiene esta información personal y confidencial.</p>
+        <p>El certificado físico se envia al campus.</p>
+        <p>
+            <a href="https://lvsihmx.github.io/certificadoih/img/reielts.pdf" class="btn btn-green">VER GUÍA PARA CONSULTAR RESULTADOS</a>
+        </p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<!-- === INICIO SCRIPT POP-UP === -->
+<script>
+    const btnPago = document.getElementById('btnPago');
+    const popup = document.getElementById('popup');
+    const btnAceptar = document.getElementById('btnAceptar');
+    const pagoLink = "https://sgu.ulsa.edu.mx/psulsa";
+
+    btnPago.addEventListener('click', () => {
+        popup.style.display = 'flex';
+    });
+
+    btnAceptar.addEventListener('click', () => {
+        window.location.href = pagoLink;
+    });
+
+    // Cierra el pop-up al hacer clic fuera del contenido
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+</script>
+<!-- === FIN SCRIPT POP-UP === -->
+
+</body>
+</html>
