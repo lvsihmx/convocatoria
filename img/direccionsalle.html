@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datos capturados</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #6DD5FA, #2980B9);
+        color: #fff;
+    }
+
+    .message-box {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 50px 70px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1.2s ease-out;
+    }
+
+    .message-box h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .message-box h1 span {
+        font-size: 40px;
+        animation: bounce 1s infinite;
+    }
+
+    .message-box p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        background: #ff9800; /* Naranja */
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .btn:hover {
+        background: #e68900;
+    }
+
+    .btn-secondary {
+        background: #ffffff;
+        color: #2980B9;
+    }
+
+    .btn-secondary:hover {
+        background: #e3e3e3;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+<script>
+    function irPagina() {
+        window.location.href = "https://ielts.idp.com/mexico/test-centre/international-house-condesa";
+    }
+
+    function irGuia() {
+        // Cambia la URL por la página donde está la guía
+        window.location.href = "guia.html";
+    }
+</script>
+
+</head>
+<body>
+    <div class="message-box">
+        <h1><span>✅</span> Tus datos se han capturado.</h1>
+        <p>El siguiente paso es selecionar tu fecha de examen puedes ir directo (botón naranja) o puedes ver la guía de como lo debes hacer (botón blanco). Debes estar atent@ a la bandeja de entrada del correo que captures.</p>
+        <p>¡Gracias!</p>
+
+        <div class="button-container">
+            <button class="btn" onclick="irPagina()">Ya quiero seleccionar la fecha de examen.</button>
+            <button class="btn btn-secondary" onclick="irGuia()">Antes quiero ver la guía</button>
+        </div>
+    </div>
+</body>
+</html>
