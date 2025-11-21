@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Candidato</title>
+
+<style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        background:#e9eef5;
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content:center;
+        align-items:flex-start;
+    }
+
+    .container{
+        background:white;
+        padding:30px;
+        margin:30px;
+        width:100%;
+        max-width:750px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.15);
+        border-radius:12px;async
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from{ opacity:0; transform:translateY(10px); }
+        to{ opacity:1; transform:translateY(0); }
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:25px;
+        font-size:26px;
+        color:#003387;
+        font-weight:700;
+    }
+
+    label{
+        font-weight:600;
+        margin-top:18px;
+        display:block;
+        color:#333;
+    }
+
+    input, select, textarea{
+        width:100%;
+        padding:12px;
+        margin-top:6px;
+        border-radius:8px;
+        border:1px solid #bbb;
+        background:#fafafa;
+        font-size:15px;
+        transition:0.25s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color:#0055ee;
+        background:white;
+        outline:none;
+        box-shadow:0 0 6px rgba(0, 85, 238, 0.3);
+    }
+
+    textarea{
+        resize:vertical;
+        min-height:80px;
+    }
+
+    .radio-group label{
+        font-weight:normal;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:6px 0;
+    }
+
+    button{
+        background:#0055ee;
+        color:white;
+        padding:14px;
+        border:none;
+        width:100%;
+        cursor:pointer;
+        border-radius:8px;
+        font-size:16px;
+        margin-top:25px;
+        font-weight:600;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#003db8;
+    }
+
+    .terms-link{
+        margin-top:10px;
+        display:block;
+        text-align:right;
+        color:#0055ee;
+        text-decoration:none;
+    }
+    .terms-link:hover{
+        text-decoration:underline;
+    }
+
+    #preview {
+        margin-top:15px;
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .thumb {
+        width:95px;
+        height:95px;
+        object-fit:cover;
+        border:2px solid #ddd;
+        border-radius:8px;
+        box-shadow:0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    .pdf-thumb {
+        width:95px;
+        height:95px;
+        border:2px solid #ddd;
+        border-radius:8px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:12px;
+        background:#f3f3f3;
+        text-align:center;
+        padding:4px;
+        box-shadow:0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    .thumb-container{
+        position:relative;
+        display:inline-block;
+    }
+
+    .remove-btn{
+        position:absolute;
+        top:-8px;
+        right:-8px;
+        background:#e10000;
+        color:white;
+        border:none;
+        border-radius:50%;
+        cursor:pointer;
+        width:26px;
+        height:26px;
+        font-size:14px;
+        font-weight:bold;
+        box-shadow:0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .small-note { font-size:12px; color:#666; font-weight:400; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Registro de Candidato</h1>
+    <form id="registroForm">
+
+        <label>Nombres y apellidos completos del candidato (a)
+        <small class="small-note"> (Así aparecerá en el certificado)</small></label>
+        <input type="text" required placeholder="Ingrese el nombre completo" id="nombreInput">
+
+        <label>Fecha de nacimiento del candidato (a)</label>
+        <input type="date" id="fechaNacimiento" required>
+
+        <label>Mayor o menor de edad</label>
+        <input type="text" id="mayoriaEdad" readonly required>
+
+        <label>Edad exacta (años, meses y días)</label>
+        <input type="text" id="edadExacta" readonly required>
+
+        <label>Escuela en la que está haciendo esta inscripción
+        <small class="small-note"> (ejemplo: Primaria Montesori, Universidad Sor Juana)</small></label>
+        <input type="text" required placeholder="Escriba el nombre de la escuela" id="escuelaInput">
+
+        <label>Mes en la que realizará el examen
+        <small class="small-note"> (Si no lo sabe, deje en blanco)</small></label>
+        <input type="text" required placeholder="Ejemplo: Marzo" id="mesExamenInput">
+
+        <div style="margin-top:20px;">
+            <label><strong>
+                ¿El candidato(a) necesita alguna adecuación especial?
+            </strong></label>
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
+                <label style="display:flex; align-items:flex-start; gap:10px; padding:12px; border:1px solid #cfd2d8; border-radius:10px; background:#f7f9fc; cursor:pointer;">
+
+                    <input type="radio" name="adecuacion" value="si" required>
+                    <span>Sí, informaré y entregaré los documentos necesarios con 2 meses de anticipación.</span>
+                </label>
+
+                <label style="display:flex; align-items:flex-start; gap:10px; padding:12px; border:1px solid #cfd2d8; border-radius:10px; background:#f7f9fc; cursor:pointer;">
+                    <input type="radio" name="adecuacion" value="no" required>
+                    <span>No es necesario ninguna adecuación.</span>
+                </label>
+            </div>
+        </div>
+
+        <label>Examen a presentar:</label>
+        <select id="examen" required>
+            <option value="">Seleccione...</option>
+            <option>STARTERS</option>
+            <option>MOVERS</option>
+            <option>FLYERS</option>
+            <option>KEY</option>
+            <option>PET</option>
+            <option>FCE</option>
+            <option>CAE</option>
+            <option>CPE</option>
+            <option>OTRO</option>
+        </select>
+
+        <label>Si eligió OTRO, escriba cuál:</label>
+        <input type="text" id="examenOtro" placeholder="Nombre del examen">
+
+        <label>
+            PAYMENT ID de sus pagos
+            <br><small class="small-note">Se recibe por correo al pagar vía Flywire.</small>
+        </label>
+        <input type="text" required placeholder="ZIZ123456789" id="paymentInput">
+
+        <label>Suba archivos o fotografías (máximo 9)</label>
+        <input type="file" accept="image/*,application/pdf" multiple capture="camera" id="archivos" required>
+
+        <div id="preview"></div>
+
+        <label style="margin-top:18px;">
+            <input type="checkbox" id="acepto" required> 
+            Leí y acepto los términos y condiciones.
+        </label>
+        <a class="terms-link" href="https://lvsihmx.github.io/convocatoria/img/terminos%20y%20condiciones%20u.html" target="_blank">
+            Ver términos y condiciones
+        </a>
+
+        <button type="submit">Enviar registro</button>
+
+    </form>
+</div>
+
+<script>
+// =============================
+// CALCULAR EDAD
+// =============================
+document.getElementById("fechaNacimiento").addEventListener("change", function() {
+    const fecha = new Date(this.value);
+    const hoy = new Date();
+
+    if(isNaN(fecha.getTime())) return;
+
+    let edad = hoy.getFullYear() - fecha.getFullYear();
+    let mes = hoy.getMonth() - fecha.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fecha.getDate())) {
+        edad--;
+    }
+
+    document.getElementById("mayoriaEdad").value = 
+        edad >= 18 ? "Mayor de edad" : "Menor de edad";
+
+    let anos = edad;
+    let meses = mes;
+    let dias = hoy.getDate() - fecha.getDate();
+
+    if (dias < 0) {
+        const mesAnterior = new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+        dias += mesAnterior;
+        meses--;
+    }
+
+    if (meses < 0) {
+        meses += 12;
+    }
+
+    document.getElementById("edadExacta").value = 
+        `${anos} años, ${meses} meses, ${dias} días`;
+});
+
+// =============================
+// HABILITAR OTRO EXAMEN
+// =============================
+const examenSelect = document.getElementById("examen");
+const campoOtro = document.getElementById("examenOtro");
+
+examenSelect.addEventListener("change", () => {
+    campoOtro.required = examenSelect.value === "OTRO";
+});
+
+// ===================================================
+// SUBIR ARCHIVOS (MÁX 9 Y MÁX 10MB EN TOTAL)
+// ===================================================
+const archivoInput = document.getElementById("archivos");
+const preview = document.getElementById("preview");
+let archivosSeleccionados = [];
+
+archivoInput.addEventListener("change", function(){
+
+    let nuevos = Array.from(this.files);
+
+    if ((archivosSeleccionados.length + nuevos.length) > 9) {
+        alert("Solo puede subir un máximo de 9 archivos.");
+        return;
+    }
+
+    const totalBytes = [...archivosSeleccionados, ...nuevos]
+        .reduce((sum, file) => sum + file.size, 0);
+
+    if (totalBytes > 10 * 1024 * 1024) {
+        alert("El peso total de los archivos no puede superar 10 MB.");
+        return;
+    }
+
+    archivosSeleccionados.push(...nuevos);
+    actualizarPreview();
+});
+
+// =============================
+// VISTA PREVIA
+// =============================
+function actualizarPreview(){
+    preview.innerHTML = "";
+
+    archivosSeleccionados.forEach((file, index) => {
+
+        let cont = document.createElement("div");
+        cont.className = "thumb-container";
+
+        let btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "✖";
+        btn.className = "remove-btn";
+        btn.onclick = function(){
+            archivosSeleccionados.splice(index, 1);
+            actualizarPreview();
+        };
+
+        if (file.type && file.type.startsWith("image/")) {
+            let reader = new FileReader();
+            reader.onload = e => {
+                let img = document.createElement("img");
+                img.src = e.target.result;
+                img.className = "thumb";
+                cont.appendChild(img);
+                cont.appendChild(btn);
+            };
+            reader.readAsDataURL(file);
+
+        } else {
+            let div = document.createElement("div");
+            div.className = "pdf-thumb";
+            div.textContent = file.name;
+            cont.appendChild(div);
+            cont.appendChild(btn);
+        }
+
+        preview.appendChild(cont);
+    });
+}
+
+// ===================================================
+// ENVÍO AL WEBAPP
+// ===================================================
+// ===================================================
+// ENVÍO AL WEBAPP (FORMDATA + ARCHIVOS REALES)
+// ===================================================
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyYM2jMdDrdrsoTZ5EQlgWIHzGIWwT294xvRJizPAoaBHZ3Hgc2zD-jbFGuFYRnf_c_/exec";
+
+document.getElementById("registroForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombreInput").value.trim();
+    const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    const mayorMenor = document.getElementById("mayoriaEdad").value;
+    const edadExacta = document.getElementById("edadExacta").value;
+    const escuela = document.getElementById("escuelaInput").value.trim();
+    const mesExamen = document.getElementById("mesExamenInput").value.trim();
+    const adecuacion = document.querySelector('input[name="adecuacion"]:checked')?.value || "";
+    const examenSel = document.getElementById("examen").value;
+    const examenOtro = document.getElementById("examenOtro").value.trim();
+    const examenFinal = examenSel === "OTRO" ? examenOtro : examenSel;
+    const paymentId = document.getElementById("paymentInput").value.trim();
+    const acepta = document.getElementById("acepto").checked;
+
+    if(!acepta){
+        alert("Debe aceptar los términos y condiciones.");
+        return;
+    }
+
+    if(archivosSeleccionados.length === 0){
+        alert("Suba al menos un archivo.");
+        return;
+    }
+
+    // Renombrar archivos
+    const archivosRenombrados = archivosSeleccionados.map(f => {
+        const ext = f.name.split('.').pop();
+        const nuevoNombre = `${escuela} - ${nombre} - ${examenFinal}.${ext}`;
+        return new File([f], nuevoNombre, { type: f.type });
+    });
+
+    // Crear FormData
+    const formData = new FormData();
+
+    formData.append("nombre", nombre);
+    formData.append("fechaNacimiento", fechaNacimiento);
+    formData.append("mayorMenor", mayorMenor);
+    formData.append("edadExacta", edadExacta);
+    formData.append("escuela", escuela);
+    formData.append("mesExamen", mesExamen);
+    formData.append("adecuacion", adecuacion);
+    formData.append("examen", examenFinal);
+    formData.append("paymentId", paymentId);
+
+    // Agregar archivos reales
+    archivosRenombrados.forEach((file, i) => {
+        formData.append(`file${i}`, file);
+    });
+
+    const submitBtn = document.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+
+    try {
+        const res = await fetch(WEBAPP_URL, {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await res.json();
+
+        if(result.ok){
+            alert("Registro enviado correctamente.");
+            archivosSeleccionados = [];
+            actualizarPreview();
+            document.getElementById("registroForm").reset();
+        } else {
+            alert("Error del servidor: " + (result.error ? JSON.stringify(result.error) : "Error desconocido"));
+        }
+
+    } catch (err) {
+        alert("Error al enviar: " + err.message);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Enviar registro";
+});
+
+
+</script>
+
+</body>
+</html>
