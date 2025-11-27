@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Galería con Blur + Fade + AutoPlay</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #f0f0f0;
+  }
+
+  #viewer {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  }
+
+  #viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.6s ease, filter 0.6s ease; /* 🌟 Fade + Blur */
+  }
+
+  #viewer img.show {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+
+  #counter {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  #playBtn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 16px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  #playBtn:hover {
+    background: #005fcc;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>Guía para elegir tu fecha</h2>
+<h3>Todos los datos son solo de referencia incluyendo los precios.</h3>
+<div id="viewer">
+  <span class="arrow" id="prev">⟨</span>
+  <img id="display" src="">
+  <span class="arrow" id="next">⟩</span>
+</div>
+
+<div id="counter">0 / 0</div>
+
+<button id="playBtn">▶ Iniciar presentación</button>
+
+<script>
+  // Construir lista de imágenes (1 a 20 excepto 14)
+  const base = "https://lvsihmx.github.io/convocatoria/img/";
+  const images = [];
+
+  for (let i = 1; i <= 20; i++) {
+    if (i === 14) continue;
+    images.push(base + i + "gi.webp");
+  }
+
+  let index = 0;
+  let autoPlay = null;
+  const imgEl = document.getElementById("display");
+  const playBtn = document.getElementById("playBtn");
+
+  function updateViewer() {
+    imgEl.classList.remove("show");
+
+    setTimeout(() => {
+      imgEl.src = images[index];
+      imgEl.classList.add("show");
+    }, 150);
+
+    document.getElementById("counter").textContent =
+      `${index + 1} / ${images.length}`;
+  }
+
+  // Flechas izquierda/derecha
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    updateViewer();
+    stopAutoPlay(); // si el usuario interactúa, se detiene autoplay
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    updateViewer();
+    stopAutoPlay();
+  });
+
+  // AutoPlay cada 3 segundos
+  function startAutoPlay() {
+    if (autoPlay) return; // ya corriendo
+
+    autoPlay = setInterval(() => {
+      index = (index + 1) % images.length;
+      updateViewer();
+    }, 3000);
+
+    playBtn.textContent = "⏸ Pausar presentación";
+  }
+
+  function stopAutoPlay() {
+    if (!autoPlay) return;
+    clearInterval(autoPlay);
+    autoPlay = null;
+
+    playBtn.textContent = "▶ Iniciar presentación";
+  }
+
+  playBtn.addEventListener("click", () => {
+    if (autoPlay) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  // Cargar primera imagen
+  updateViewer();
+</script>
+
+</body>
+</html>
