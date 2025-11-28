@@ -7,7 +7,7 @@
 <!-- 💾 Control de caché por un año -->
 <meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
 
-<title>Guía de Registro IELTS - UNIVERSIDAD LA SALLE</title>
+<title>Registro IELTS - Universidad la salle</title>
 <style>
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -154,12 +154,180 @@
 
   ul { margin: 10px 0 10px 25px; }
 </style>
+
+
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #f0f0f0;
+  }
+
+  #viewer {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  }
+
+  #viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.6s ease, filter 0.6s ease;
+  }
+
+  #viewer img.show {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+
+  #counter {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  #playBtn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 16px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  #playBtn:hover {
+    background: #005fcc;
+  }
+
+
+
+/* 🔵 Contenedor principal en fila */
+.contenedor-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+/* 🔵 Tarjetas ajustadas */
+.contenedor-fila .highlight {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  font-size: 0.9em;
+}
+
+/* 🔵 Tablets → 2 columnas */
+@media (max-width: 950px) {
+  .contenedor-fila {
+    flex-wrap: wrap;
+  }
+  .contenedor-fila .highlight {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+/* 🔵 Celulares → 1 columna */
+@media (max-width: 650px) {
+  .contenedor-fila .highlight {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* 🔵 Título animado con resaltado azul */
+.titulo-animado {
+  padding: 10px 18px;
+  border-left: 6px solid #007bff;
+  background: #eaf3ff;
+  border-radius: 6px;
+  animation: glow 0.7s ease;
+  text-align: center;
+  display: inline-block;
+  margin: 25px auto;
+}
+
+@keyframes glow {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ✨ Efecto de luz pasando sobre el botón */
+.efecto-luz {
+  position: relative;
+  overflow: hidden;
+}
+
+.efecto-luz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.2s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  60% { left: 130%; }
+  100% { left: 130%; }
+}
+
+
+
+</style>
+
+
+
 </head>
 <body>
 
 <header>
   <img src="https://lvsihmx.github.io/certificadoih/img/LOGOIHB.jpg" alt="Logotipo IH México">
-  <h1>Bienvenida comunidad de UNIVERSIDAD LA SALLE</h1>
+  <h1>Bienvenida comunidad de Universidad la salle</h1>
 </header>
 
 <main>
@@ -167,6 +335,7 @@
 
   <h2>DOCUMENTACIÓN QUE DEBES SUBIR</h2>
   <p>Los requisitos son distintos si eres <strong>mayor o menor de edad</strong>. Aquí se detallan los documentos necesarios.</p>
+<div class="contenedor-fila">
 
   <div class="highlight mayor">
     <h3>🧑‍💼 Mayor de edad</h3>
@@ -176,91 +345,169 @@
 
   <div class="highlight menor-sin-pasaporte">
     <h3>👦 Menor de edad sin pasaporte vigente</h3>
-
-    <strong><p>Debes llenar estos dos formatos:</p></strong>
+    <p><strong>Debes llenar estos dos formatos:</strong></p>
     <ul>
       <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/ICONF.pdf">Da click para descargar Minor Consent</a></li>
       <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/IVOI.pdf">Da click para descargar VOI</a></li>
     </ul>
-
-  <strong>  <p>Debes tener tu credencial escolar</p></strong>
-    <strong><p>Debes tener tu acta de nacimiento</p></strong>
-
-    <p>Los formatos deben llenarse a mano, en <strong>letra de molde y mayúsculas</strong>, excepto donde mencione lo contrario (como el recuadro que dice: “This is a specimen…”).</p>
+    <p><strong>Debes tener tu credencial escolar</strong></p>
+    <p><strong>Debes tener tu acta de nacimiento</strong></p>
   </div>
 
   <div class="highlight menor-pasaporte">
     <h3>🧒 Menor de edad con pasaporte vigente</h3>
-   <strong> <p>Debes llenar este formato:</p></strong>
+    <p><strong>Debes llenar este formato:</strong></p>
     <ul>
        <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/ICONF.pdf">Da click para descargar Minor Consent</a></li>
     </ul>
-  <strong><p>Debes tener tu pasaporte vigente a la fecha del examen.</p></strong>
-
-    <p>El formato debe llenarse a mano, en <strong>letra de molde y mayúsculas</strong>, excepto donde mencione lo contrario (como el recuadro que dice: “This is a specimen…”).</p>
+    <p><strong>Debes tener tu pasaporte vigente a la fecha del examen.</strong></p>
   </div>
 
+</div>
 
-  <h2>Documentos guía</h2>
 
-  <!-- 🔹 Sección resaltada: Menores sin pasaporte -->
-  <div class="highlight menor-sin-pasaporte">
-    <h3>👦 Documentos para menores sin pasaporte vigente</h3>
-    <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/1.png" alt="Documentos menores sin pasaporte">
-  </div>
+  <h2>Ejemplo de documentos que debes subir y guía para subirlos.</h2>
 
-  <!-- 🔸 Sección resaltada: Menores con pasaporte -->
-  <div class="highlight menor-pasaporte">
-    <h3>🧒 Documentos para menores con pasaporte vigente</h3>
-    <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/2.png" alt="Documentos menores con pasaporte">
-  </div>
 
-  <!-- 🔵 Sección resaltada: Mayores de edad -->
-  <div class="highlight mayor">
-    <h3>🧑‍💼 Documentos para mayores de edad con pasaporte o INE vigentes</h3>
-    <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/3.png" alt="Documentos mayores con INE o pasaporte">
-  </div>
+<h2 id="title" class="titulo-animado">Menor de edad sin pasaporte vigente.</h2>
 
-  <h2>Guia para crear documento para subir,capturar datos y hacer el registro</h2>
+<div id="viewer">
+  <span class="arrow" id="prev">⟨</span>
+  <img id="display" src="">
+  <span class="arrow" id="next">⟩</span>
+</div>
 
-  <p>Una vez que tengas todos los documentos da click en el botón que aparece abajo “<strong>Da click para hacer registro</strong>”.  
-  Cuando des click te dirigirá a esta página.Continua leyendo para guiarte en el proceso.
-  <p>El botón te dirigirá a esta página:</p>
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/4.png" alt="Pantalla de opciones">
+<div id="counter">0 / 0</div>
 
-  <p>Selecciona el primer botón si tus archivos están en tu computadora, o el segundo si vas a tomar fotos con tu celular.En las flechas azules verás los documentos que has subido.Cuando hayas subido todas tus imagenes da click en el botón. </p>
+<div><button id="playBtn">▶ Iniciar presentación</button></div>
 
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/5.png" alt="Pantalla de carga de imágenes">
 
-  <p>Verás una barra de progreso mientras se genera tu archivo.  
-  Al finalizar, se descargará automáticamente una imagen llamada <strong>my_ielts_document</strong>.</p>
 
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/6.png" alt="Archivo generado">
 
-  <p>Una vez que tengas tu archivo, pasa al <strong>PASO 2</strong> donde capturarás tus datos:</p>
+<a href="https://script.google.com/macros/s/AKfycbylhl1QOFpz0wy8NGMCO6onhIOCF5EfOBMjfbyF7MCNKl5NCTHQocjHaWdXbselv7ZQ/exec"
+    
+        
 
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/7.png" alt="Pantalla de datos">
+   class="boton efecto-luz">
+   📤 Da click para hacer registro
+</a>
 
-  <p>Al finalizar te saldrá esta pantalla:</p>
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/8.png" alt="Pantalla final">
 
-  <p>Y recibirás un correo con tu confirmación:</p>
-  <img class="guia" src="https://lvsihmx.github.io/certificadoih/img/10.png" alt="Correo de confirmación">
 
-  <div class="highlight">
-    <p>Los documentos se enviarán a revisión y en caso de faltar algo, contactaremos a tu escuela.</p>
-    <p><strong>¡Gracias!</strong></p>
-  </div>
-
-  <center>
-    <a href="https://script.google.com/macros/s/AKfycbylhl1QOFpz0wy8NGMCO6onhIOCF5EfOBMjfbyF7MCNKl5NCTHQocjHaWdXbselv7ZQ/exec" class="boton">📤 Da clic para hacer registro</a>
-  </center>
 </main>
 
 <footer>
   <p>— Guía de Registro IELTS</p>
 </footer>
 
+
+<script>
+  // Construir lista de imágenes
+  const base = "https://lvsihmx.github.io/convocatoria/img/";
+  const images = [];
+
+
+for (let i = 1; i <= 12; i++) {
+  if (i === 10) continue;  // ❌ Saltar imagen 10
+  images.push(base + i + "di.webp");
+}
+
+
+  // Títulos por imagen
+  const titles = [
+    "Menor de edad sin pasaporte vigente.",
+    "Menor de edad con pasaporte vigente.",
+    "Mayor de edad.",
+    "Da clic en el botón.",
+    "Agrega los documentos desde tu computadora o toma foto con el celular.", 
+    "Puedes ver los documentos cargados con las flechas, cuando esten listos da clic en el botón naranja.",
+    "Te aparecerá que esta creando tu archivo.",
+    "Te descargará tu archivo.",
+    "Captura los datos y sube el archivo descargado.",
+    "Te aparecerá que esta cargando el archivo.",
+    "Listo!, Concluiste!. Te llegará un correo como comprobante."
+];
+
+
+
+  let index = 0;
+  let autoPlay = null;
+  const imgEl = document.getElementById("display");
+  const playBtn = document.getElementById("playBtn");
+  const titleEl = document.getElementById("title");
+
+  function updateViewer() {
+    imgEl.classList.remove("show");
+
+    setTimeout(() => {
+      imgEl.src = images[index];
+      imgEl.classList.add("show");
+    }, 150);
+
+    // Actualizar contador e h2 dinámico
+    document.getElementById("counter").textContent = `${index + 1} / ${images.length}`;
+    titleEl.textContent = titles[index];
+  }
+
+  // Flechas izquierda/derecha
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    updateViewer();
+    stopAutoPlay();
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    updateViewer();
+    stopAutoPlay();
+  });
+
+  // AutoPlay cada 3 segundos
+  function startAutoPlay() {
+    if (autoPlay) return;
+
+    autoPlay = setInterval(() => {
+      index = (index + 1) % images.length;
+      updateViewer();
+    }, 3000);
+
+    playBtn.textContent = "⏸ Pausar presentación";
+  }
+
+  function stopAutoPlay() {
+    if (!autoPlay) return;
+    clearInterval(autoPlay);
+    autoPlay = null;
+
+    playBtn.textContent = "▶ Iniciar presentación";
+  }
+
+  playBtn.addEventListener("click", () => {
+    if (autoPlay) stopAutoPlay();
+    else startAutoPlay();
+  });
+
+  // Cargar primera imagen
+  updateViewer();
+
+function updateViewer() {
+    imgEl.classList.remove("show");
+
+    setTimeout(() => {
+      imgEl.src = images[index];
+      imgEl.classList.add("show");
+    }, 150);
+
+    document.getElementById("counter").textContent = `${index + 1} / ${images.length}`;
+    titleEl.textContent = titles[index];
+
+    // 🔵 Reinicia la animación del título
+    titleEl.classList.remove("titulo-animado");
+    void titleEl.offsetWidth;
+    titleEl.classList.add("titulo-animado");
+}
+
+</script>
 </body>
 </html>
 
