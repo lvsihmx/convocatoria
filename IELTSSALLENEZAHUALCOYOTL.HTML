@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 💾 Control de caché por un año -->
+<meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
+
+<title>Registro IELTS -Salle Nezahualcóyotl</title>Universidad La Salle Nezahualcóyotl
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9fafc;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: linear-gradient(270deg, #003d8f, #007bff, #4fa3ff);
+    background-size: 600% 600%;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fondoAnimado 8s ease infinite, fadeInDown 1.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header img {
+    width: 180px;
+    border-radius: 14px;
+    box-shadow: 0 0 14px rgba(255,255,255,0.6);
+    animation: fadeIn 1.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-size: 1.7em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 25px 30px;
+    animation: fadeInUp 1.3s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h2 {
+    color: #003d8f;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-top: 30px;
+  }
+
+  p { margin: 12px 0; }
+
+  .highlight {
+    background: #f0f7ff;
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+    margin: 18px 0;
+    animation: fadeIn 1.5s ease;
+  }
+
+  .highlight.mayor {
+    background: #eaf2ff;
+    border-left: 6px solid #007bff;
+  }
+
+  .highlight.menor-sin-pasaporte {
+    background: #e8f9e9;
+    border-left: 6px solid #2ecc71;
+  }
+
+  .highlight.menor-pasaporte {
+    background: #fff3e0;
+    border-left: 6px solid #ff9800;
+  }
+
+  .highlight h3 {
+    margin-top: 0;
+  }
+
+  .highlight.mayor h3 { color: #0056b3; }
+  .highlight.menor-sin-pasaporte h3 { color: #1e8e3e; }
+  .highlight.menor-pasaporte h3 { color: #e67e00; }
+
+  img.guia {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease;
+  }
+
+  a.boton {
+    display: inline-block;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s;
+  }
+
+  a.boton:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+    font-size: 0.9em;
+    animation: fadeIn 2s ease;
+  }
+
+  ul { margin: 10px 0 10px 25px; }
+</style>
+
+
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #f0f0f0;
+  }
+
+  #viewer {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  }
+
+  #viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.6s ease, filter 0.6s ease;
+  }
+
+  #viewer img.show {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+
+  #counter {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  #playBtn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 16px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  #playBtn:hover {
+    background: #005fcc;
+  }
+
+
+
+/* 🔵 Contenedor principal en fila */
+.contenedor-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+/* 🔵 Tarjetas ajustadas */
+.contenedor-fila .highlight {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  font-size: 0.9em;
+}
+
+/* 🔵 Tablets → 2 columnas */
+@media (max-width: 950px) {
+  .contenedor-fila {
+    flex-wrap: wrap;
+  }
+  .contenedor-fila .highlight {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+/* 🔵 Celulares → 1 columna */
+@media (max-width: 650px) {
+  .contenedor-fila .highlight {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* 🔵 Título animado con resaltado azul */
+.titulo-animado {
+  padding: 10px 18px;
+  border-left: 6px solid #007bff;
+  background: #eaf3ff;
+  border-radius: 6px;
+  animation: glow 0.7s ease;
+  text-align: center;
+  display: inline-block;
+  margin: 25px auto;
+}
+
+@keyframes glow {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ✨ Efecto de luz pasando sobre el botón */
+.efecto-luz {
+  position: relative;
+  overflow: hidden;
+}
+
+.efecto-luz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.2s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  60% { left: 130%; }
+  100% { left: 130%; }
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<header>
+  <img src="https://lvsihmx.github.io/certificadoih/img/LOGOIHB.jpg" alt="Logotipo IH México">
+  <h1>Bienvenida comunidad de Universidad La Salle Nezahualcóyotl</h1>
+</header>
+
+<main>
+  <p>Esta es una guía para subir tus documentos y hacer el registro al examen <strong>IELTS</strong>.</p>
+
+  <h2>DOCUMENTACIÓN QUE DEBES SUBIR</h2>
+  <p>Los requisitos son distintos si eres <strong>mayor o menor de edad</strong>. Aquí se detallan los documentos necesarios.</p>
+<div class="contenedor-fila">
+
+  <div class="highlight mayor">
+    <h3>🧑‍💼 Mayor de edad</h3>
+    <p>Solo debes subir tu <strong>INE por ambos lados</strong> en un solo archivo o tu <strong>pasaporte</strong>.  
+    Ambos deben estar <strong>vigentes</strong> a la fecha del examen.</p>
+  </div>
+
+  <div class="highlight menor-sin-pasaporte">
+    <h3>👦 Menor de edad sin pasaporte vigente</h3>
+    <p><strong>Debes llenar estos dos formatos:</strong></p>
+    <ul>
+      <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/ICONF.pdf">Da click para descargar Minor Consent</a></li>
+      <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/IVOI.pdf">Da click para descargar VOI</a></li>
+    </ul>
+    <p><strong>Debes tener tu credencial escolar</strong></p>
+    <p><strong>Debes tener tu acta de nacimiento</strong></p>
+  </div>
+
+  <div class="highlight menor-pasaporte">
+    <h3>🧒 Menor de edad con pasaporte vigente</h3>
+    <p><strong>Debes llenar este formato:</strong></p>
+    <ul>
+       <li>📄 <a href="https://lvsihmx.github.io/convocatoria/img/ICONF.pdf">Da click para descargar Minor Consent</a></li>
+    </ul>
+    <p><strong>Debes tener tu pasaporte vigente a la fecha del examen.</strong></p>
+  </div>
+
+</div>
+
+
+  <h2>Ejemplo de documentos que debes subir y guía para subirlos.</h2>
+
+
+<h2 id="title" class="titulo-animado">Menor de edad sin pasaporte vigente.</h2>
+
+<div id="viewer">
+  <span class="arrow" id="prev">⟨</span>
+  <img id="display" src="">
+  <span class="arrow" id="next">⟩</span>
+</div>
+
+<div id="counter">0 / 0</div>
+
+<div><button id="playBtn">▶ Iniciar presentación</button></div>
+
+
+
+
+<a href="https://script.google.com/macros/s/AKfycbylhl1QOFpz0wy8NGMCO6onhIOCF5EfOBMjfbyF7MCNKl5NCTHQocjHaWdXbselv7ZQ/exec"
+    
+        
+
+   class="boton efecto-luz">
+   📤 Da click para hacer registro
+</a>
+
+
+
+</main>
+
+<footer>
+  <p>— Guía de Registro IELTS</p>
+</footer>
+
+
+<script>
+  // Construir lista de imágenes
+  const base = "https://lvsihmx.github.io/convocatoria/img/";
+  const images = [];
+
+
+for (let i = 1; i <= 12; i++) {
+  if (i === 10) continue;  // ❌ Saltar imagen 10
+  images.push(base + i + "di.webp");
+}
+
+
+  // Títulos por imagen
+  const titles = [
+    "Menor de edad sin pasaporte vigente.",
+    "Menor de edad con pasaporte vigente.",
+    "Mayor de edad.",
+    "Da clic en el botón.",
+    "Agrega los documentos desde tu computadora o toma foto con el celular.", 
+    "Puedes ver los documentos cargados con las flechas, cuando esten listos da clic en el botón naranja.",
+    "Te aparecerá que esta creando tu archivo.",
+    "Te descargará tu archivo.",
+    "Captura los datos y sube el archivo descargado.",
+    "Te aparecerá que esta cargando el archivo.",
+    "Listo!, Concluiste!. Te llegará un correo como comprobante."
+];
+
+
+
+  let index = 0;
+  let autoPlay = null;
+  const imgEl = document.getElementById("display");
+  const playBtn = document.getElementById("playBtn");
+  const titleEl = document.getElementById("title");
+
+  function updateViewer() {
+    imgEl.classList.remove("show");
+
+    setTimeout(() => {
+      imgEl.src = images[index];
+      imgEl.classList.add("show");
+    }, 150);
+
+    // Actualizar contador e h2 dinámico
+    document.getElementById("counter").textContent = `${index + 1} / ${images.length}`;
+    titleEl.textContent = titles[index];
+  }
+
+  // Flechas izquierda/derecha
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    updateViewer();
+    stopAutoPlay();
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    updateViewer();
+    stopAutoPlay();
+  });
+
+  // AutoPlay cada 3 segundos
+  function startAutoPlay() {
+    if (autoPlay) return;
+
+    autoPlay = setInterval(() => {
+      index = (index + 1) % images.length;
+      updateViewer();
+    }, 3000);
+
+    playBtn.textContent = "⏸ Pausar presentación";
+  }
+
+  function stopAutoPlay() {
+    if (!autoPlay) return;
+    clearInterval(autoPlay);
+    autoPlay = null;
+
+    playBtn.textContent = "▶ Iniciar presentación";
+  }
+
+  playBtn.addEventListener("click", () => {
+    if (autoPlay) stopAutoPlay();
+    else startAutoPlay();
+  });
+
+  // Cargar primera imagen
+  updateViewer();
+
+function updateViewer() {
+    imgEl.classList.remove("show");
+
+    setTimeout(() => {
+      imgEl.src = images[index];
+      imgEl.classList.add("show");
+    }, 150);
+
+    document.getElementById("counter").textContent = `${index + 1} / ${images.length}`;
+    titleEl.textContent = titles[index];
+
+    // 🔵 Reinicia la animación del título
+    titleEl.classList.remove("titulo-animado");
+    void titleEl.offsetWidth;
+    titleEl.classList.add("titulo-animado");
+}
+
+</script>
+</body>
+</html>
