@@ -310,34 +310,45 @@
         </thead>
         <tbody>
             <tr>
-                <td>IELTS,KEY,PET,FCE,CAE,CPE</td>
-                <td><P> Enero 31</P><P> Febrero 28</P><P> Marzo 21</P><P> Abril 25</P><P> Mayo 30</P><P> Junio 20</P> (Sujetas a cambios.).</td>
-            </tr>
+                <td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Enero 31</td></tr>
+<tr>
+<td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Febrero 28 </td></tr>
+<tr>
+<td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Marzo 21</td></tr>
+<tr>
+<td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Abril 25</td></tr>
+<tr>
+<td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Mayo 30</td></tr>
+
+<tr>
+<td><P>IELTS</P></P>Cambridge:KEY,PET,FCE,CAE y CPE</P></td>
+                <td>Junio 20</td></tr>
         </tbody>
     </table>
 
-    <h2 class="section-header">Detalles de la Aplicación</h2>
+    <h2 class="section-header">Confirmación</h2>
     <table>
         <thead>
             <tr>
-                <th>Tipo de Examen</th>
-                <th>Características Generales</th>
-                <th>Confirmación de Fecha y Sede</th>
-                <th>Duración Aproximada</th>
+                <th>Habilidad </th>
+              
+
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Escrito</td>
-                <td>Para todos los exámenes la fecha mencionada en la convocatoria esta sujeta a cambios. La fecha y horario exactos se dan una semana antes, en caso de que no te llegará a tu correo debes mandar un correo a elvis.gomez@ihmexico.com</td>
-                <td>Recibirás la confirmación de horario, sede y día(s) de aplicación una semana antes de tu examen. </td>
-                <td>Entre 3 y 4 horas y media, dependiendo del examen que presentes.</td>
+                <td>Para todos los exámenes la fecha y horario exactos se dan una semana antes, en caso de que no te llegará la confirmación envía un correo a elvis.gomez@ihmexico.com</td>
+                
             </tr>
             <tr>
                 <td>Oral</td>
-                <td>Para todos los exámenes, generalmente coincide con la fecha del escrito, aunque en casos aislados puede ser un día distinto. El horario exacto se dará una semana antes.</td>
-                <td>Fecha y horarios confirmados se enviarán al correo que registraste.</td>
-                <td>20 minutos en promedio (el proceso completo desde el registro toma aproximadamente 1 hora).</td>
+                <td>Para todos los exámenes, generalmente coincide con la fecha del escrito y en casos aislados es otro día.
             </tr>
         </tbody>
     </table>
@@ -377,8 +388,10 @@
         popup.style.display = 'flex';
     });
 
-    btnAceptar.addEventListener('click', () => {
-        window.location.href = pagoLink;
+   btnAceptar.addEventListener('click', () => {
+    popup.style.display = 'none';   // 👈 OCULTA EL POPUP
+    window.open(pagoLink, "_blank");
+
     });
 
     // Cierra el pop-up al hacer clic fuera del contenido
@@ -390,6 +403,19 @@
 </script>
 <!-- === FIN SCRIPT POP-UP === -->
 
+
+<script>
+    document.querySelectorAll('a[href]').forEach(link => {
+        const url = link.getAttribute('href');
+        if (url.startsWith('http')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+</script>
+
+
 </body>
 </html>
+
 
